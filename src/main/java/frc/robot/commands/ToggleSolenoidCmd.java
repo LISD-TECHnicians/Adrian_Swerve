@@ -28,6 +28,8 @@ public class ToggleSolenoidCmd extends Command {
     if (3 > delayTimer.get() && delayTimer.get() > 2) {
       pneumaticsSubsystem.toggleSolenoid();
     }
+
+    System.out.println("TEST");
   }
 
   @Override

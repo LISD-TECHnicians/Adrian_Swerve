@@ -17,11 +17,11 @@ import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.math.util.Units;
 
-// import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.auto.AutoBuilder;
 
 import edu.wpi.first.networktables.GenericEntry;
 import edu.wpi.first.wpilibj.SPI;
-// import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -101,7 +101,7 @@ public class SwerveSubsystem extends SubsystemBase {
   private final Field2d fieldLayout = new Field2d();
 
   public SwerveSubsystem() {
-    /* AutoBuilder.configureHolonomic(
+    AutoBuilder.configureHolonomic(
       this::getPose, 
       this::setPose, 
       this::getChassisSpeeds, 
@@ -115,9 +115,11 @@ public class SwerveSubsystem extends SubsystemBase {
           return DriverStation.getAlliance().get() == DriverStation.Alliance.Red;
       },
       this
-    ); */
+    );
 
     gyro.reset();
+
+    gyro.setAngleAdjustment(-90);
   }
 
   public void setChassisSpeeds(ChassisSpeeds chassisSpeeds) {

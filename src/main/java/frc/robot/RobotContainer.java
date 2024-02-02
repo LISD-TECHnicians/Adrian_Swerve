@@ -18,12 +18,13 @@ import frc.robot.commands.SetPoseCmd;
 
 import frc.robot.commandgroups.SolenoidPoseCmdGrp;
 
-// import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.auto.NamedCommands;
 
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-// import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class RobotContainer {
   private final CommandXboxController controller = new CommandXboxController(ControllerConstants.CONTROLLER_PORT);
@@ -48,26 +49,28 @@ public class RobotContainer {
 
   public static ShuffleboardTab robotStatus = Shuffleboard.getTab("Robot");
   
-  private SendableChooser<Command> autoChooser = new SendableChooser<>();
+  private SendableChooser<Command> autoChooser;// = new SendableChooser<>();
 
   public RobotContainer() {
+    NamedCommands.registerCommand("TEST", new ToggleSolenoidCmd(pneumaticSubsystem));
+
     configureBindings();
 
     swerveSubsystem.setDefaultCommand(joystickSwerve);
 
-    autoChooser.setDefaultOption("Toggle Solenoid", toggleSolenoid);
-    autoChooser.addOption("Reset Pose", resetPose);
+    // autoChooser.setDefaultOption("Toggle Solenoid", toggleSolenoid);
+    // autoChooser.addOption("Reset Pose", resetPose);
 
-    // autoChooser = AutoBuilder.buildAutoChooser();
+    autoChooser = AutoBuilder.buildAutoChooser();
 
-    robotStatus.add("Auto Chooser", autoChooser);
-    // SmartDashboard.putData("Auto Mode", autoChooser);
+    //robotStatus.add("Auto Chooser", autoChooser);
+    SmartDashboard.putData("Auto Mode", autoChooser);
   }
 
   private void configureBindings() {
     // controller.leftBumper().onTrue(toggleSolenoid);
 
-    // controller.rightBumper().onTrue(resetPose);
+    controller.rightBumper().onTrue(resetPose);
 
     controller.button(1).onTrue(setDriveBrake);
     controller.button(2).onTrue(setDriveCoast);

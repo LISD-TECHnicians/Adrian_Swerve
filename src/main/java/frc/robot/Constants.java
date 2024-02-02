@@ -18,7 +18,7 @@ public final class Constants {
     public static final int FRONT_LEFT_DRIVE_ID = 1;
     public static final int FRONT_LEFT_ROTATION_ID = 5;
     public static final int FRONT_LEFT_ROTATION_ENCODER_ID = 9;
-    public static final double FRONT_LEFT_ANGLE_OFFSET = 1.836;
+    public static final double FRONT_LEFT_ANGLE_OFFSET = -0.068;
     public static final boolean FRONT_LEFT_DRIVE_MOTOR_INVERT = false;
     public static final boolean FRONT_LEFT_ROTATION_MOTOR_INVERT = true;
     public static final boolean FRONT_LEFT_ROTATION_ENCODER_INVERT = false;
@@ -26,7 +26,7 @@ public final class Constants {
     public static final int FRONT_RIGHT_DRIVE_ID = 2;
     public static final int FRONT_RIGHT_ROTATION_ID = 6;
     public static final int FRONT_RIGHT_ROTATION_ENCODER_ID = 10;
-    public static final double FRONT_RIGHT_ANGLE_OFFSET = 2.029;
+    public static final double FRONT_RIGHT_ANGLE_OFFSET = 1.858;
     public static final boolean FRONT_RIGHT_DRIVE_MOTOR_INVERT = true;
     public static final boolean FRONT_RIGHT_ROTATION_MOTOR_INVERT = true;
     public static final boolean FRONT_RIGHT_ROTATION_ENCODER_INVERT = false;
@@ -34,7 +34,7 @@ public final class Constants {
     public static final int REAR_RIGHT_DRIVE_ID = 3;
     public static final int REAR_RIGHT_ROTATION_ID = 7;
     public static final int REAR_RIGHT_ROTATION_ENCODER_ID = 11;
-    public static final double REAR_RIGHT_ANGLE_OFFSET = 3.015; // In radians
+    public static final double REAR_RIGHT_ANGLE_OFFSET = -1.097; // In radians
     public static final boolean REAR_RIGHT_DRIVE_MOTOR_INVERT = true;
     public static final boolean REAR_RIGHT_ROTATION_MOTOR_INVERT = true;
     public static final boolean REAR_RIGHT_ROTATION_ENCODER_INVERT = false;
@@ -42,7 +42,7 @@ public final class Constants {
     public static final int REAR_LEFT_DRIVE_ID = 4;
     public static final int REAR_LEFT_ROTATION_ID = 8;
     public static final int REAR_LEFT_ROTATION_ENCODER_ID = 12;
-    public static final double REAR_LEFT_ANGLE_OFFSET = -0.721;
+    public static final double REAR_LEFT_ANGLE_OFFSET = -0.052;
     public static final boolean REAR_LEFT_DRIVE_MOTOR_INVERT = false;
     public static final boolean REAR_LEFT_ROTATION_MOTOR_INVERT = true;
     public static final boolean REAR_LEFT_ROTATION_ENCODER_INVERT = false;
@@ -68,16 +68,16 @@ public final class Constants {
 
     public static final double NOMINAL_VOLTAGE = 12.0;
 
-    public static final double SWERVE_RADIUS = 0.44; // m
+    public static final double SWERVE_RADIUS = 0.375; // m
 
     public static final double WHEEL_DIAMETER = 0.102;
     public static final double WHEEL_CIRCUMFERENCE = WHEEL_DIAMETER * Math.PI;
 
-    public static final double TICKS_PER_REVOLUTION_NEO = 42;
+    // public static final double TICKS_PER_REVOLUTION_NEO = 42;
     public static final double DRIVE_GEAR_RATIO = 1/6.75;
 
-    public static final double DRIVE_MOTOR_POSITION_TO_METERS = DRIVE_GEAR_RATIO * WHEEL_CIRCUMFERENCE * 1/TICKS_PER_REVOLUTION_NEO;
-    public static final double DRIVE_MOTOR_VELOCITY_TO_METERS_SECOND = DRIVE_GEAR_RATIO * WHEEL_CIRCUMFERENCE * 1/TICKS_PER_REVOLUTION_NEO;
+    public static final double DRIVE_MOTOR_POSITION_TO_METERS = DRIVE_GEAR_RATIO * WHEEL_CIRCUMFERENCE;// * 1/TICKS_PER_REVOLUTION_NEO;
+    public static final double DRIVE_MOTOR_VELOCITY_TO_METERS_SECOND = DRIVE_GEAR_RATIO * WHEEL_CIRCUMFERENCE;// * 1/TICKS_PER_REVOLUTION_NEO;
 
     public static final double MAX_DRIVE_SPEED = 4.97; // Max possible m/s
     public static final double MAX_DRIVE_SET_ACCELERATION = 10; // Max choosen m/s^2
