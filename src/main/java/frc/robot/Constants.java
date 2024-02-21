@@ -12,6 +12,10 @@ public final class Constants {
     public static final int CONTROLLER_PORT = 0;
 
     public static final double DEADBAND = 0.2; 
+    public static final double DEBOUNCE_TIME = 0.2;
+    
+    public static final int DEFAULT_NEO_CURRENT_LIMIT = 40;
+    public static final int DEFAULT_550_CURRENT_LIMIT = 20;
   }
 
   public static class DriveConstants {
@@ -107,6 +111,77 @@ public final class Constants {
     public static final Pose2d ZERO_POSE = new Pose2d();
   }
 
+  public static class IntakeConstants {
+    public static final int INTAKE_LEFT_ID = x;
+    public static final int INTAKE_RIGHT_ID = x;
+
+    public static final double INTAKE_SPEED_FACTOR = 0.75;
+
+    public static final double INTAKE_DEFAULT_SPEED = 1.0;
+  }
+
+  public static final class PivotConstants {
+    public static final int PIVOT_ID = x;
+    public static final boolean PIVOT_INVERTED = false;
+    public static final boolean IS_TUNABLE = false;
+    
+
+    public static final double PIVOT_P = 1.0;
+    public static final double PIVOT_I = 1.0;
+    public static final double PIVOT_D = 1.0;
+
+    public static final float PIVOT_FORWARD_LIMIT = 0;
+    public static final float PIVOT_REVERSE_LIMIT = 0;
+
+    public static final int PIVOT_CURRENT_LIMIT = 20;
+
+    public static final double PIVOT_MAX_OUTPUT = 0.5;
+
+    public static final double PIVOT_MIN_OUTPUT = 0.25;
+
+    public static final double ANGLE_OFFSET = x;
+
+    public static final double PIVOT_SHOOTER_OFFSET = 0.0;
+
+    public static final double INTAKE_ANGLE = x;
+    public static final double AMP_ANGLE = x;
+    public static final double SUBWOOFER_ANGLE = x;
+    public static final double TRAVEL_ANGLE = x;
+    public static final double MAX_ANGLE = x;
+
+    public static final double PIVOT_VARIABILITY = 1.0;
+  }
+
+  public static class ShooterConstants {
+    public static final int SHOOTER_LEFT_ID = x;
+    public static final int SHOOTER_RIGHT_ID = x;
+
+    public static final double SHOOTER_SPEED_FACTOR = 0.8;
+
+    public static final double SHOOTER_SHOOT_SPEED = 1.0;
+
+    public static final double SHOOTER_AMP_SPEED = 1.0;
+
+    public static final double SHOOTER_TIME_DELAY = x;
+  }
+
+  public static class ClimberConstants {
+    public static final int CLIMBER_LEFT_ID = x;
+    public static final int CLIMBER_RIGHT_ID = x;
+
+    public static final float CLIMBER_FORWARD_LIMIT = 0;
+    public static final float CLIMBER_REVERSE_LIMIT = 0;
+
+    public static final double CLIMBER_RATE_LIMIT = 3; 
+
+    public static final double CLIMBER_SPEED_FACTOR = 0.8;
+
+    public static final double CLIMBER_VARIABILITY = 0.2;
+
+    public static final double CLIMBER_GEAR_RATIO = 1/20;
+  }
+
+
   public static class LimelightConstants {
     public static final String LL_ONE = "limelight-llone";
     // public static final String LL_TWO = "limelight-lltwo";
@@ -116,7 +191,5 @@ public final class Constants {
     public static final int NOTE_DETECTION_PIPELINE = 2;
   }
 
-  public static class PneumaticsConstants {
-    public static final int LA_BIMBA_PORT = 0;
-  }
+
 }
