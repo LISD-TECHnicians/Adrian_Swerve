@@ -1,19 +1,22 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Constants.PivotConstants;
-import frc.robot.subsystems.PivotSubsystem;
-import frc.robot.Constants.ShooterConstants;
-import frc.robot.subsystems.ShooterSubsystem;
-//import frc.robot.Constants.IntakeConstants;
-import frc.robot.subsystems.IntakeSubsystem;
+//import java.util.function.DoubleSupplier;
 
-public class ManualAmpCmd extends Command {
+import edu.wpi.first.wpilibj2.command.Command;
+//import frc.robot.Constants.IntakeConstants;
+import frc.robot.Constants.PivotConstants;
+//import frc.robot.Constants.IntakeConstants;
+
+import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.PivotSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
+
+public class ManualTravelCmd extends Command {
   private final IntakeSubsystem intakeSubsystem;
   private final PivotSubsystem pivotSubsystem;
   private final ShooterSubsystem shooterSubsystem;
 
-  public ManualAmpCmd(IntakeSubsystem intakeSubsystem, PivotSubsystem pivotSubsystem, ShooterSubsystem shooterSubsystem) {
+  public ManualTravelCmd(IntakeSubsystem intakeSubsystem, PivotSubsystem pivotSubsystem, ShooterSubsystem shooterSubsystem) {
     this.intakeSubsystem = intakeSubsystem;
     this.pivotSubsystem = pivotSubsystem;
     this.shooterSubsystem = shooterSubsystem;
@@ -26,15 +29,14 @@ public class ManualAmpCmd extends Command {
 
   @Override
   public void execute() {
-    pivotSubsystem.setPivotAngle(PivotConstants.AMP_ANGLE);
-    shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_AMP_SPEED);
+    pivotSubsystem.setPivotAngle(PivotConstants.TRAVEL_ANGLE);
+    shooterSubsystem.setShooterSpeed(0);
     intakeSubsystem.setIntakeSpeed(0);
+
   }
 
   @Override
-  public void end(boolean interrupted) {
-    //shooterSubsystem.setShooterSpeed(0);
-  }
+  public void end(boolean interrupted) {}
 
   @Override
   public boolean isFinished() {

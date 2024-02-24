@@ -11,7 +11,7 @@ public final class Constants {
   public static class ControllerConstants {
     public static final int CONTROLLER_PORT = 0;
 
-    public static final double DEADBAND = 0.2; 
+    public static final double DEADBAND = 0.1; 
     public static final double DEBOUNCE_TIME = 0.2;
     
     public static final int DEFAULT_NEO_CURRENT_LIMIT = 40;
@@ -115,9 +115,9 @@ public final class Constants {
     public static final int INTAKE_LEFT_ID = 13;
     public static final int INTAKE_RIGHT_ID = 14;
 
-    public static final double INTAKE_SPEED_FACTOR = 0.2;
+    public static final double INTAKE_SPEED_FACTOR = 0.7;
 
-    public static final double INTAKE_DEFAULT_SPEED = 0.5;
+    public static final double INTAKE_DEFAULT_SPEED = 0.6;
   }
 
   public static final class PivotConstants {
@@ -127,30 +127,31 @@ public final class Constants {
     public static final boolean IS_TUNABLE = false;
     
 
-    public static final double PIVOT_P = 0.95;
+    public static final double PIVOT_P = 0.025;
     public static final double PIVOT_I = 0;
-    public static final double PIVOT_D = 0.1;
+    public static final double PIVOT_D = 0.0;
 
     public static final float PIVOT_FORWARD_LIMIT = 0;
     public static final float PIVOT_REVERSE_LIMIT = 0;
 
-    public static final int PIVOT_CURRENT_LIMIT = 20;
+    public static final int PIVOT_CURRENT_LIMIT = 80;
 
-    public static final double PIVOT_MAX_OUTPUT = 0.8;
+    public static final double PIVOT_MAX_OUTPUT = 0.7;
 
-    public static final double PIVOT_MIN_OUTPUT = 0.4;
+    public static final double PIVOT_MIN_OUTPUT = 0.06;
 
-    public static final double ANGLE_OFFSET = 0.481;
+    public static final double ANGLE_OFFSET = 0.4893;
 
     public static final double PIVOT_SHOOTER_OFFSET = 0.0;
 
-    public static final double INTAKE_ANGLE = 0.5;
-    public static final double AMP_ANGLE = 85.0;
-    public static final double SUBWOOFER_ANGLE = 18.0;
-    public static final double TRAVEL_ANGLE = 10.0;
-    public static final double MAX_ANGLE = 92.0;
+    public static final double INTAKE_ANGLE = 4;
+    public static final double AMP_ANGLE = 107.0;
+    public static final double SUBWOOFER_ANGLE = 21.0;
+    public static final double TRAVEL_ANGLE = 13.0;
+    public static final double MAX_ANGLE = 107.0;
+    public static final double MIN_ANGLE = 3.0;
 
-    public static final double PIVOT_VARIABILITY = 0.5;
+    public static final double PIVOT_VARIABILITY = 2.0;
   }
 
   public static class ShooterConstants {

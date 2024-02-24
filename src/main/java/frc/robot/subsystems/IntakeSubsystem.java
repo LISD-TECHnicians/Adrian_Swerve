@@ -24,8 +24,8 @@ public class IntakeSubsystem extends SubsystemBase {
     intakeLeft.setSmartCurrentLimit(ControllerConstants.DEFAULT_NEO_CURRENT_LIMIT);
     intakeRight.setSmartCurrentLimit(ControllerConstants.DEFAULT_NEO_CURRENT_LIMIT);
 
-    intakeLeft.setIdleMode(IdleMode.kCoast);
-    intakeRight.setIdleMode(IdleMode.kCoast);
+    intakeLeft.setIdleMode(IdleMode.kBrake);
+    intakeRight.setIdleMode(IdleMode.kBrake);
 
     intakeRight.follow(intakeLeft, false);
   }
