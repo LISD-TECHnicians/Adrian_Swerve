@@ -24,10 +24,10 @@ public class ShooterSubsystem extends SubsystemBase {
     shooterLeft.setSmartCurrentLimit(ControllerConstants.DEFAULT_NEO_CURRENT_LIMIT);
     shooterRight.setSmartCurrentLimit(ControllerConstants.DEFAULT_NEO_CURRENT_LIMIT);
 
-    shooterLeft.setIdleMode(IdleMode.kCoast);
-    shooterRight.setIdleMode(IdleMode.kCoast);
+    shooterLeft.setIdleMode(IdleMode.kBrake);
+    shooterRight.setIdleMode(IdleMode.kBrake);
 
-    shooterRight.follow(shooterLeft, true);
+    shooterRight.follow(shooterLeft, false);
   }
 
   public void setShooterSpeed(double speed) {

@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.ControllerConstants;
 import frc.robot.Constants.DriveConstants;
-//import frc.robot.Constants.ShooterConstants;
+import frc.robot.Constants.ShooterConstants;
 //import frc.robot.subsystems.PneumaticsSubsystem;
 import frc.robot.subsystems.Drive.SwerveSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
@@ -54,9 +54,9 @@ public class RobotContainer {
   private final SetPoseCmd resetPose = new SetPoseCmd(swerveSubsystem, DriveConstants.ZERO_POSE);
   private final SetDriveBrakeCmd setDriveBrake = new SetDriveBrakeCmd(swerveSubsystem);
   private final SetDriveCoastCmd setDriveCoast = new SetDriveCoastCmd(swerveSubsystem);
-  private final ManualSubwooferCmd subwoofer = new ManualSubwooferCmd(pivotSubsystem);
-  private final ManualAmpCmd amp = new ManualAmpCmd(pivotSubsystem);
-  private final ManualScoreCmd score = new ManualScoreCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem);
+  private final ManualSubwooferCmd subwoofer = new ManualSubwooferCmd(pivotSubsystem, shooterSubsystem);
+  private final ManualAmpCmd amp = new ManualAmpCmd(pivotSubsystem, shooterSubsystem);
+  private final ManualScoreCmd score = new ManualScoreCmd(intakeSubsystem, pivotSubsystem);
   private final ManualIntakeCmd intake = new ManualIntakeCmd(intakeSubsystem, pivotSubsystem);
 
   //private final SolenoidPoseCmdGrp solenoidPose = new SolenoidPoseCmdGrp(swerveSubsystem, pneumaticSubsystem);
@@ -86,12 +86,12 @@ public class RobotContainer {
 
     controller.rightBumper().onTrue(resetPose);
 
-    controller.button(1).onTrue(setDriveBrake);
-    controller.button(2).onTrue(setDriveCoast);
-    controller.button(3).onTrue(amp);
-    controller.button(4).onTrue(subwoofer);
-    controller.button(5).whileTrue(score);
-    controller.button(6).onTrue(intake);
+    //controller.button(1).onTrue(setDriveBrake);
+    //controller.button(2).onTrue(setDriveCoast);
+    controller.button(4).whileTrue(amp);
+    controller.button(3).whileTrue(subwoofer);
+    controller.button(1).whileTrue(score);
+    controller.button(2).whileTrue(intake);
     
 
     //controller.button(3).onTrue(solenoidPose);

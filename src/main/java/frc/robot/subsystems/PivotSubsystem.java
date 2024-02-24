@@ -12,9 +12,12 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.DutyCycleEncoder;
 
 public class PivotSubsystem extends SubsystemBase {
   private final CANSparkMax pivot = new CANSparkMax(PivotConstants.PIVOT_ID, MotorType.kBrushless);
+
+  private final DutyCycleEncoder pivot_encoder = new DutyCycleEncoder(PivotConstants.PIVOT_ENCODER_ID);
 
   private final PIDController pivotPID = new PIDController(PivotConstants.PIVOT_P, PivotConstants.PIVOT_I, PivotConstants.PIVOT_D);
 
@@ -29,11 +32,11 @@ public class PivotSubsystem extends SubsystemBase {
 
     pivot.setIdleMode(IdleMode.kBrake);
 
-    pivot.setSoftLimit(SoftLimitDirection.kForward, PivotConstants.PIVOT_FORWARD_LIMIT);
-    pivot.setSoftLimit(SoftLimitDirection.kReverse, PivotConstants.PIVOT_REVERSE_LIMIT);
+    //pivot.setSoftLimit(SoftLimitDirection.kForward, PivotConstants.PIVOT_FORWARD_LIMIT);
+    //pivot.setSoftLimit(SoftLimitDirection.kReverse, PivotConstants.PIVOT_REVERSE_LIMIT);
 
-    pivot.enableSoftLimit(SoftLimitDirection.kForward, true);
-    pivot.enableSoftLimit(SoftLimitDirection.kReverse, true);
+    //pivot.enableSoftLimit(SoftLimitDirection.kForward, true);
+    //pivot.enableSoftLimit(SoftLimitDirection.kReverse, true);
   }
 
   public void setPivotAngle(double angle) {
@@ -41,11 +44,11 @@ public class PivotSubsystem extends SubsystemBase {
   }
 
   public double getPivotRawAngle(){
-    return pivot.getEncoder().getPosition();
+    return pivot_encoder.getAbsolutePosition();
   }
 
   public double getPivotAngle() {
-    return (pivot.getEncoder().getPosition()*360)-PivotConstants.ANGLE_OFFSET; //  degrees
+    return ((PivotConstants.ANGLE_OFFSET-pivot_encoder.getAbsolutePosition())*360); //  degrees
   }
 
   public double getFeedForward(){
@@ -73,7 +76,9 @@ public class PivotSubsystem extends SubsystemBase {
   }
 
   @Override
-  public void periodic() {}
+  public void periodic() {
+    System.out.println("Raw Encoder Position: " + getPivotAngle());
+  }
 
   @Override
   public void simulationPeriodic() {}

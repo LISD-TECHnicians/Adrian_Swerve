@@ -27,7 +27,7 @@ public class IntakeSubsystem extends SubsystemBase {
     intakeLeft.setIdleMode(IdleMode.kCoast);
     intakeRight.setIdleMode(IdleMode.kCoast);
 
-    intakeRight.follow(intakeLeft, true);
+    intakeRight.follow(intakeLeft, false);
   }
 
   public void setIntakeSpeed(double speed) {
