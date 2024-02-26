@@ -96,8 +96,8 @@ public final class Constants {
     public static final double MOTOR_ROTATION_I = 0.1; 
     public static final double MOTOR_ROTATION_D = 0.0;
 
-    public static final double ROTATION_POSITION_CONTROL_P = 1.0; // Needs tuned
-    public static final double ROTATION_POSITION_CONTROL_I = 5.0; 
+    public static final double ROTATION_POSITION_CONTROL_P = 5.0; // Needs tuned
+    public static final double ROTATION_POSITION_CONTROL_I = 0.0; 
     public static final double ROTATION_POSITION_CONTROL_D = 0.0;    
 
     public static final double PATH_TRANSLATION_P = 5.0;
