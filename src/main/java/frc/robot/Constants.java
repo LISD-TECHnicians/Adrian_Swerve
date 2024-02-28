@@ -92,11 +92,11 @@ public final class Constants {
 
     public static final double MAX_SET_ROTATION_SPEED = MAX_POSSIBLE_ROTATION_SPEED * ROTATION_SPEED_SCALE_FACTOR;
 
-    public static final double MOTOR_ROTATION_P = 0.1;
-    public static final double MOTOR_ROTATION_I = 0.1; 
+    public static final double MOTOR_ROTATION_P = 0.5; //ACTUAL steering motor PID Fully Tuned (DO NOT ADJUST)
+    public static final double MOTOR_ROTATION_I = 0.0; 
     public static final double MOTOR_ROTATION_D = 0.0;
 
-    public static final double ROTATION_POSITION_CONTROL_P = 5.0; // Needs tuned
+    public static final double ROTATION_POSITION_CONTROL_P = 5.0; // these values not adjusted, but it works so leave it
     public static final double ROTATION_POSITION_CONTROL_I = 0.0; 
     public static final double ROTATION_POSITION_CONTROL_D = 0.0;    
 
