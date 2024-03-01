@@ -148,7 +148,7 @@ public final class Constants {
 
     public static final double INTAKE_ANGLE = 4;
     public static final double AMP_ANGLE = 107.0;
-    public static final double SUBWOOFER_ANGLE = 21.0;
+    public static final double SUBWOOFER_ANGLE = 23.0;
     public static final double TRAVEL_ANGLE = 13.0;
     public static final double MAX_ANGLE = 107.0;
     public static final double MIN_ANGLE = 3.0;

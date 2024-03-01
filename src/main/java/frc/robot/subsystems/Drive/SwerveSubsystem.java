@@ -119,7 +119,7 @@ public class SwerveSubsystem extends SubsystemBase {
 
     gyro.reset();
 
-    //gyro.setAngleAdjustment(-90);
+    gyro.setAngleAdjustment(-90);
   }
 
   public void setChassisSpeeds(ChassisSpeeds chassisSpeeds) {

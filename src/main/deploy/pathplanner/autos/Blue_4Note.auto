@@ -8,7 +8,7 @@
         {
           "type": "named",
           "data": {
-            "name": null
+            "name": "SubwooferAim"
           }
         },
         {
@@ -20,7 +20,7 @@
         {
           "type": "named",
           "data": {
-            "name": null
+            "name": "Score"
           }
         },
         {

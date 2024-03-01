@@ -49,8 +49,8 @@ public class RobotContainer {
   //private final ToggleSolenoidCmd toggleSolenoid = new ToggleSolenoidCmd(pneumaticSubsystem);
   private final SwerveCmd joystickSwerve = new SwerveCmd(
     swerveSubsystem, 
-    () -> -controller.getLeftY()*swerveSubsystem.curvedSpeedOutput(controller.getLeftY(), controller.getLeftX()), 
     () -> -controller.getLeftX()*swerveSubsystem.curvedSpeedOutput(controller.getLeftY(), controller.getLeftX()), 
+    () -> controller.getLeftY()*swerveSubsystem.curvedSpeedOutput(controller.getLeftY(), controller.getLeftX()), 
     () -> controller.getRightX()*swerveSubsystem.curvedSpeedOutput(controller.getRightX(), 0),
     controller.leftTrigger(),
     controller.rightTrigger());
@@ -72,8 +72,8 @@ public class RobotContainer {
 
   public RobotContainer() {
     //NamedCommands.registerCommand("TEST", new ToggleSolenoidCmd(pneumaticSubsystem));
-    NamedCommands.registerCommand("Subwoofer Aim", new ManualSubwooferCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem));
-    NamedCommands.registerCommand("Amp Aim", new ManualAmpCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem));
+    NamedCommands.registerCommand("SubwooferAim", new ManualSubwooferCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem));
+    NamedCommands.registerCommand("AmpAim", new ManualAmpCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem));
     NamedCommands.registerCommand("Score", new ManualScoreCmd(intakeSubsystem, pivotSubsystem));
     NamedCommands.registerCommand("Intake", new ManualIntakeCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem));
 
