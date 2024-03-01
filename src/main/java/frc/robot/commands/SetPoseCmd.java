@@ -22,10 +22,13 @@ public class SetPoseCmd extends Command {
   @Override
   public void initialize() {
     swerveSubsystem.setPose(pose);
+    swerveSubsystem.resetGyro();
+    //System.out.println("Reset Gyro");
   }
 
   @Override
-  public void execute() {}
+  public void execute() {
+  }
 
   @Override
   public void end(boolean interrupted) {}

@@ -32,7 +32,7 @@ public class PivotSubsystem extends SubsystemBase {
 
     pivot.setSmartCurrentLimit(PivotConstants.PIVOT_CURRENT_LIMIT);
 
-    pivot.setIdleMode(IdleMode.kCoast);
+    pivot.setIdleMode(IdleMode.kBrake);
 
     //pivotPID.setTolerance(PivotConstants.PIVOT_VARIABILITY);
 
@@ -86,8 +86,8 @@ public class PivotSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     pivot.set(getPidOutput());
-    System.out.println("Raw Encoder Position: " + getPivotAngle());
-    System.out.println("Pid Output: " + getPidOutput());
+    //System.out.println("Raw Encoder Position: " + getPivotAngle());
+    //System.out.println("Pid Output: " + getPidOutput());
   }
 
   @Override

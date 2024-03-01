@@ -95,16 +95,16 @@ public class RobotContainer {
   private void configureBindings() {
     // controller.leftBumper().onTrue(toggleSolenoid);
 
-    controller.button(7).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(resetPose);
+    controller.button(7).onTrue(resetPose);
 
     //controller.button(1).onTrue(setDriveBrake);
     //controller.button(2).onTrue(setDriveCoast);
-    controller.button(4).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(amp);
-    controller.button(3).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(subwoofer);
-    controller.button(1).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(score);
-    controller.button(2).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(intake);
-    controller.button(5).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(travel);
-    controller.button(6).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(stop);
+    controller.button(4).onTrue(amp);
+    controller.button(3).onTrue(subwoofer);
+    controller.button(1).onTrue(score);
+    controller.button(2).onTrue(intake);
+    controller.button(5).onTrue(travel);
+    controller.button(6).onTrue(stop);
 
     //controller.button(3).onTrue(solenoidPose);
   }

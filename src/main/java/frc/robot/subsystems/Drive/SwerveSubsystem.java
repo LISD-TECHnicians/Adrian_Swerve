@@ -119,7 +119,7 @@ public class SwerveSubsystem extends SubsystemBase {
 
     gyro.reset();
 
-    gyro.setAngleAdjustment(-90);
+    //gyro.setAngleAdjustment(-90);
   }
 
   public void setChassisSpeeds(ChassisSpeeds chassisSpeeds) {
@@ -143,6 +143,10 @@ public class SwerveSubsystem extends SubsystemBase {
 
   public void setPose(Pose2d pose) {
     swervePoseEstimator.resetPosition(Rotation2d.fromRadians(getYaw()), swervePositions, pose);
+  }
+
+  public void resetGyro(){
+    gyro.reset();
   }
   
   public Pose2d getPose() {
@@ -212,8 +216,8 @@ public class SwerveSubsystem extends SubsystemBase {
     // System.out.println("Cancoder FR; " + frontRightSwerve.getRotationPosition());
     // System.out.println("Cancoder RR; " + rearRightSwerve.getRotationPosition());
     // System.out.println("Cancoder RL; " + rearLeftSwerve.getRotationPosition());
+    System.out.println("Yaw: " + gyro.getAngle());
   }
-
   @Override
   public void simulationPeriodic() {}
 }
