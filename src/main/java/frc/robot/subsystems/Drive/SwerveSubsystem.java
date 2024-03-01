@@ -175,6 +175,14 @@ public class SwerveSubsystem extends SubsystemBase {
     rearLeftSwerve.setDriveCoast();
   }
 
+  public double curvedSpeedOutput(double x, double y) {
+    return Math.pow(getR(x,y), DriveConstants.CONTROLLER_POWER-1);
+  }
+
+  public double getR(double x, double y) {
+    return Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+  }
+
   @Override
   public void periodic() {
     frontLeftPosition.distanceMeters = frontLeftSwerve.getDrivePosition();

@@ -1,0 +1,73 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 15.22,
+      "y": 5.53
+    },
+    "rotation": 180.0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": null
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.0
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": null
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red_Sub2MidClose"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red_MidClose2Sub"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red_Sub2TopClose"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red_TopClose2Sub"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red_Sub2BottomClose"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red_BottomClose2Sub"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}

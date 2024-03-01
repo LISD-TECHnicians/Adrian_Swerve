@@ -108,6 +108,8 @@ public final class Constants {
     public static final double PATH_ROTATION_I = 0.0; 
     public static final double PATH_ROTATION_D = 0.0;
 
+    public static final double CONTROLLER_POWER = 2;
+
     public static final Pose2d ZERO_POSE = new Pose2d();
   }
 

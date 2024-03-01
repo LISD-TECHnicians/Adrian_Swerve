@@ -29,6 +29,7 @@ import frc.robot.commands.SetPoseCmd;
 
 import com.pathplanner.lib.auto.AutoBuilder;
 //mport com.pathplanner.lib.auto.NamedCommands;
+import com.pathplanner.lib.auto.NamedCommands;
 
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
@@ -48,9 +49,9 @@ public class RobotContainer {
   //private final ToggleSolenoidCmd toggleSolenoid = new ToggleSolenoidCmd(pneumaticSubsystem);
   private final SwerveCmd joystickSwerve = new SwerveCmd(
     swerveSubsystem, 
-    () -> -controller.getLeftY(), 
-    () -> -controller.getLeftX(), 
-    () -> controller.getRightX(),
+    () -> -controller.getLeftY()*swerveSubsystem.curvedSpeedOutput(controller.getLeftY(), controller.getLeftX()), 
+    () -> -controller.getLeftX()*swerveSubsystem.curvedSpeedOutput(controller.getLeftY(), controller.getLeftX()), 
+    () -> controller.getRightX()*swerveSubsystem.curvedSpeedOutput(controller.getRightX(), 0),
     controller.leftTrigger(),
     controller.rightTrigger());
   private final SetPoseCmd resetPose = new SetPoseCmd(swerveSubsystem, DriveConstants.ZERO_POSE);
@@ -71,6 +72,12 @@ public class RobotContainer {
 
   public RobotContainer() {
     //NamedCommands.registerCommand("TEST", new ToggleSolenoidCmd(pneumaticSubsystem));
+    NamedCommands.registerCommand("Subwoofer Aim", new ManualSubwooferCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem));
+    NamedCommands.registerCommand("Amp Aim", new ManualAmpCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem));
+    NamedCommands.registerCommand("Score", new ManualScoreCmd(intakeSubsystem, pivotSubsystem));
+    NamedCommands.registerCommand("Intake", new ManualIntakeCmd(intakeSubsystem, pivotSubsystem, shooterSubsystem));
+
+
 
     configureBindings();
 
@@ -88,16 +95,16 @@ public class RobotContainer {
   private void configureBindings() {
     // controller.leftBumper().onTrue(toggleSolenoid);
 
-    controller.rightBumper().onTrue(resetPose);
+    controller.button(7).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(resetPose);
 
     //controller.button(1).onTrue(setDriveBrake);
     //controller.button(2).onTrue(setDriveCoast);
-    controller.button(4).onTrue(amp);
-    controller.button(3).onTrue(subwoofer);
-    controller.button(1).onTrue(score);
-    controller.button(2).onTrue(intake);
-    controller.button(5).onTrue(travel);
-    controller.button(6).onTrue(stop);
+    controller.button(4).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(amp);
+    controller.button(3).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(subwoofer);
+    controller.button(1).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(score);
+    controller.button(2).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(intake);
+    controller.button(5).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(travel);
+    controller.button(6).debounce(ControllerConstants.DEBOUNCE_TIME).onTrue(stop);
 
     //controller.button(3).onTrue(solenoidPose);
   }

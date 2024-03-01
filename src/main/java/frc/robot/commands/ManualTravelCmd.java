@@ -30,8 +30,8 @@ public class ManualTravelCmd extends Command {
   @Override
   public void execute() {
     pivotSubsystem.setPivotAngle(PivotConstants.TRAVEL_ANGLE);
-    shooterSubsystem.setShooterSpeed(0);
-    intakeSubsystem.setIntakeSpeed(0);
+    shooterSubsystem.setShooterSpeed(-0.5);
+    intakeSubsystem.setIntakeSpeed(-0.5);
 
   }
 
