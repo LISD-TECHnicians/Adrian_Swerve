@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 import frc.robot.Constants.ControllerConstants;
 import frc.robot.Constants.DriveConstants;
@@ -13,6 +14,7 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 public class IntakeSubsystem extends SubsystemBase {
   private final CANSparkMax intakeLeft = new CANSparkMax(IntakeConstants.INTAKE_LEFT_ID, MotorType.kBrushless);
   private final CANSparkMax intakeRight = new CANSparkMax(IntakeConstants.INTAKE_RIGHT_ID, MotorType.kBrushless);
+  private final DigitalInput noteSensor = new DigitalInput(1);
 
   public IntakeSubsystem() {
     intakeLeft.restoreFactoryDefaults();
@@ -27,19 +29,31 @@ public class IntakeSubsystem extends SubsystemBase {
     intakeLeft.setIdleMode(IdleMode.kBrake);
     intakeRight.setIdleMode(IdleMode.kBrake);
 
-    intakeRight.follow(intakeLeft, false);
+    //intakeRight.follow(intakeLeft, false);
   }
 
   public void setIntakeSpeed(double speed) {
     intakeLeft.set(speed * IntakeConstants.INTAKE_SPEED_FACTOR);
+    intakeRight.set(speed * IntakeConstants.INTAKE_SPEED_FACTOR);
+  }
+
+  public void setHoldSpeed(double speed) {
+    intakeLeft.set(speed * IntakeConstants.INTAKE_SPEED_FACTOR);
+    intakeRight.set(0);
   }
 
   public double getIntakeSpeed() {
     return intakeLeft.get();
   }
 
+  public boolean getNotePresent() {
+    return !noteSensor.get();
+  }
+
   @Override
-  public void periodic() {}
+  public void periodic() {
+    //System.out.println("Note Present: " + getNotePresent());
+  }
 
   @Override
   public void simulationPeriodic() {}

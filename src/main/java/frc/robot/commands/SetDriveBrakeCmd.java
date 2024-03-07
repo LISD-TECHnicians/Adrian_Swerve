@@ -15,7 +15,14 @@ public class SetDriveBrakeCmd extends Command {
 
   @Override
   public void initialize() {
-    swerveSubsystem.setDriveBrake();
+    if(swerveSubsystem.driveBrake){
+      swerveSubsystem.setDriveCoast();
+      swerveSubsystem.driveBrake = false;
+    }
+    else{
+      swerveSubsystem.setDriveBrake();
+      swerveSubsystem.driveBrake = true;
+    }
   }
 
   @Override

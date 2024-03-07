@@ -79,11 +79,12 @@ public class SwerveCmd extends Command {
           xSpeed, 
           ySpeed, 
           rotationSpeed, 
-          Rotation2d.fromRadians(swerveSubsystem.getYaw()));
+          Rotation2d.fromRadians(-swerveSubsystem.getYaw()));
       }
     }
 
     swerveSubsystem.setChassisSpeeds(swerveSpeeds);
+    //System.out.println("RotVal: " + rotationController.getAsDouble());
   }
 
   @Override

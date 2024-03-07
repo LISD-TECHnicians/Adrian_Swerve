@@ -3,10 +3,11 @@ package frc.robot.commands;
 //import java.util.function.DoubleSupplier;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.Constants.IntakeConstants;
 //import frc.robot.Constants.IntakeConstants;
 import frc.robot.Constants.PivotConstants;
 //import frc.robot.Constants.IntakeConstants;
-
+import frc.robot.Constants.ShooterConstants;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.PivotSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
@@ -25,13 +26,15 @@ public class ManualTravelCmd extends Command {
   }
 
   @Override
-  public void initialize() {}
+  public void initialize() {
+    
+    pivotSubsystem.setPivotAngle(PivotConstants.TRAVEL_ANGLE);
+    shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_HOLD_SPEED);
+    intakeSubsystem.setHoldSpeed(IntakeConstants.INTAKE_HOLD_SPEED);
+  }
 
   @Override
   public void execute() {
-    pivotSubsystem.setPivotAngle(PivotConstants.TRAVEL_ANGLE);
-    shooterSubsystem.setShooterSpeed(-0.1);
-    intakeSubsystem.setIntakeSpeed(-0.1);
 
   }
 
@@ -40,6 +43,6 @@ public class ManualTravelCmd extends Command {
 
   @Override
   public boolean isFinished() {
-    return false;
+    return true;
   }
 }

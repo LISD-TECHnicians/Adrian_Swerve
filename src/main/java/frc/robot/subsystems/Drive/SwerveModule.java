@@ -48,7 +48,7 @@ public class SwerveModule {
 
     rotationEncoder.getConfigurator().apply(new CANcoderConfiguration());
 
-    driveMotor.setIdleMode(IdleMode.kCoast);
+    driveMotor.setIdleMode(IdleMode.kBrake);
     rotationMotor.setIdleMode(IdleMode.kBrake);
 
     this.rotationEncoderInvert = rotationEncoderInvert;

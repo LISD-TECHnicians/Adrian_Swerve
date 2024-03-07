@@ -3,36 +3,36 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 15.215087870934038,
+        "x": 2.715093550487853,
         "y": 5.534466424383086
       },
       "prevControl": null,
       "nextControl": {
-        "x": 14.21508787093405,
+        "x": 1.715093550487853,
         "y": 5.534466424383086
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "MidClose"
     },
     {
       "anchor": {
-        "x": 13.99925605538415,
+        "x": 1.3448785191409243,
         "y": 5.534466424383086
       },
       "prevControl": {
-        "x": 14.99925605538415,
+        "x": 2.3448785191409245,
         "y": 5.534466424383086
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Subwoofer"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [
     {
-      "name": "Intake",
+      "name": "Aim at Subwoofer",
       "waypointRelativePos": 0.05,
       "command": {
         "type": "parallel",
@@ -41,7 +41,7 @@
             {
               "type": "named",
               "data": {
-                "name": "Intake"
+                "name": "SubwooferAim"
               }
             }
           ]
@@ -50,20 +50,20 @@
     }
   ],
   "globalConstraints": {
-    "maxVelocity": 4.97,
-    "maxAcceleration": 10.0,
-    "maxAngularVelocity": 11.3,
-    "maxAngularAcceleration": 22.73
+    "maxVelocity": 1.2,
+    "maxAcceleration": 15.0,
+    "maxAngularVelocity": 250.0,
+    "maxAngularAcceleration": 500.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 180.0,
+    "rotation": 0,
     "rotateFast": false
   },
   "reversed": false,
   "folder": null,
   "previewStartingState": {
-    "rotation": 180.0,
+    "rotation": 0,
     "velocity": 0
   },
   "useDefaultConstraints": true

@@ -22,13 +22,14 @@ public class ManualAmpCmd extends Command {
   }
 
   @Override
-  public void initialize() {}
-
-  @Override
-  public void execute() {
+  public void initialize() {
     pivotSubsystem.setPivotAngle(PivotConstants.AMP_ANGLE);
     shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_AMP_SPEED);
     intakeSubsystem.setIntakeSpeed(0);
+  }
+
+  @Override
+  public void execute() {
   }
 
   @Override
@@ -38,6 +39,6 @@ public class ManualAmpCmd extends Command {
 
   @Override
   public boolean isFinished() {
-    return false;
+    return true;
   }
 }

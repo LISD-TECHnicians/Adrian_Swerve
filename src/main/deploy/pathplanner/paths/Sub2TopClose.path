@@ -12,20 +12,20 @@
         "y": 5.534466424383086
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Subwoofer"
     },
     {
       "anchor": {
-        "x": 2.5,
-        "y": 4.1046482092964185
+        "x": 2.715093550487853,
+        "y": 7.0
       },
       "prevControl": {
-        "x": 1.021548512291337,
-        "y": 4.1046482092964185
+        "x": 1.2658220263523874,
+        "y": 7.0
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "TopClose"
     }
   ],
   "rotationTargets": [],
@@ -50,10 +50,10 @@
     }
   ],
   "globalConstraints": {
-    "maxVelocity": 4.97,
-    "maxAcceleration": 10.0,
-    "maxAngularVelocity": 11.3,
-    "maxAngularAcceleration": 22.73
+    "maxVelocity": 1.2,
+    "maxAcceleration": 15.0,
+    "maxAngularVelocity": 250.0,
+    "maxAngularAcceleration": 500.0
   },
   "goalEndState": {
     "velocity": 0,

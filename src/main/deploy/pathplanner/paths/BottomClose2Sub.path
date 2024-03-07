@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.51,
-        "y": 4.1
+        "x": 2.622507500654099,
+        "y": 4.0943608704260015
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.0299999999999998,
-        "y": 4.1
+        "x": 1.1425075006540992,
+        "y": 4.0943608704260015
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "BottomClose"
     },
     {
       "anchor": {
-        "x": 1.34,
-        "y": 5.53
+        "x": 1.3448785191409243,
+        "y": 5.534466424383086
       },
       "prevControl": {
-        "x": 2.34,
-        "y": 5.53
+        "x": 2.3448785191409245,
+        "y": 5.534466424383086
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Subwoofer"
     }
   ],
   "rotationTargets": [],
@@ -33,7 +33,7 @@
   "eventMarkers": [
     {
       "name": "Aim at Subwoofer",
-      "waypointRelativePos": 0.05,
+      "waypointRelativePos": 0.4,
       "command": {
         "type": "parallel",
         "data": {
@@ -47,30 +47,13 @@
           ]
         }
       }
-    },
-    {
-      "name": "Shoot",
-      "waypointRelativePos": 1.0,
-      "command": {
-        "type": "parallel",
-        "data": {
-          "commands": [
-            {
-              "type": "named",
-              "data": {
-                "name": "Score"
-              }
-            }
-          ]
-        }
-      }
     }
   ],
   "globalConstraints": {
-    "maxVelocity": 4.97,
-    "maxAcceleration": 10.0,
-    "maxAngularVelocity": 11.3,
-    "maxAngularAcceleration": 22.73
+    "maxVelocity": 1.2,
+    "maxAcceleration": 15.0,
+    "maxAngularVelocity": 250.0,
+    "maxAngularAcceleration": 500.0
   },
   "goalEndState": {
     "velocity": 0,

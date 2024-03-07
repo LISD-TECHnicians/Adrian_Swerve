@@ -91,6 +91,8 @@ public class SwerveSubsystem extends SubsystemBase {
   private final GenericEntry yawEntry = RobotContainer.robotStatus.add("Heading", 0).getEntry(); 
   private final GenericEntry speedEntry = RobotContainer.robotStatus.add("Speed", 0).getEntry();
 
+  public boolean driveBrake = false;
+
   /* private final GenericEntry slider = RobotContainer.robotStatus
     .add("Slider", 0)
     .withWidget("Number Slider")
@@ -119,7 +121,7 @@ public class SwerveSubsystem extends SubsystemBase {
 
     gyro.reset();
 
-    gyro.setAngleAdjustment(-90);
+    gyro.setAngleAdjustment(90);
   }
 
   public void setChassisSpeeds(ChassisSpeeds chassisSpeeds) {
@@ -154,7 +156,7 @@ public class SwerveSubsystem extends SubsystemBase {
   }
 
   public double getYaw() {
-    return Units.degreesToRadians(gyro.getAngle()); // Negative makes clockwise positive
+    return Units.degreesToRadians(-gyro.getAngle()); // Negative makes clockwise positive
   }
 
   /*public double getPitch() {
@@ -216,7 +218,7 @@ public class SwerveSubsystem extends SubsystemBase {
     // System.out.println("Cancoder FR; " + frontRightSwerve.getRotationPosition());
     // System.out.println("Cancoder RR; " + rearRightSwerve.getRotationPosition());
     // System.out.println("Cancoder RL; " + rearLeftSwerve.getRotationPosition());
-    System.out.println("Yaw: " + gyro.getAngle());
+    // System.out.println("Yaw: " + gyro.getAngle());
   }
   @Override
   public void simulationPeriodic() {}

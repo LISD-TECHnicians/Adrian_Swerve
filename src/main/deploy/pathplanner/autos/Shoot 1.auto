@@ -1,6 +1,12 @@
 {
   "version": 1.0,
-  "startingPose": null,
+  "startingPose": {
+    "position": {
+      "x": 0.9250965870352799,
+      "y": 4.495567086372268
+    },
+    "rotation": -50.0
+  },
   "command": {
     "type": "sequential",
     "data": {
@@ -14,7 +20,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 0
+            "waitTime": 1.5
           }
         },
         {
@@ -24,15 +30,21 @@
           }
         },
         {
-          "type": "path",
+          "type": "wait",
           "data": {
-            "pathName": "Blue_Sub2MidClose"
+            "waitTime": 0.5
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "StopMotors"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "Blue_MidClose2Sub"
+            "pathName": "Drive Forward"
           }
         }
       ]

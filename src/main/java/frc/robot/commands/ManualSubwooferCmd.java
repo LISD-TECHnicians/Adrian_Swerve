@@ -22,13 +22,15 @@ public class ManualSubwooferCmd extends Command {
   }
 
   @Override
-  public void initialize() {}
-
-  @Override
-  public void execute() {
+  public void initialize() {
+    
     pivotSubsystem.setPivotAngle(PivotConstants.SUBWOOFER_ANGLE);
     shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_SHOOT_SPEED);
     intakeSubsystem.setIntakeSpeed(0);
+  }
+
+  @Override
+  public void execute() {
   }
 
   @Override
@@ -38,6 +40,6 @@ public class ManualSubwooferCmd extends Command {
 
   @Override
   public boolean isFinished() {
-    return false;
+    return true;
   }
 }

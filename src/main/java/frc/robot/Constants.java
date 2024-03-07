@@ -53,10 +53,10 @@ public final class Constants {
 
     // Declare location of Swerve Modules relative to robot center 
     // X AXIS TOWARDS FRONT, Y AXIS TOWARDS LEFT
-    public static final Translation2d FRONT_LEFT_LOCATION = new Translation2d(0.31, 0.31);
-    public static final Translation2d FRONT_RIGHT_LOCATION = new Translation2d(0.31, -0.31);
-    public static final Translation2d REAR_RIGHT_LOCATION = new Translation2d(-0.31, -0.31);
-    public static final Translation2d REAR_LEFT_LOCATION = new Translation2d(-0.31, 0.31);
+    public static final Translation2d FRONT_LEFT_LOCATION = new Translation2d(0.27, 0.27);
+    public static final Translation2d FRONT_RIGHT_LOCATION = new Translation2d(0.27, -0.27);
+    public static final Translation2d REAR_RIGHT_LOCATION = new Translation2d(-0.27, -0.27);
+    public static final Translation2d REAR_LEFT_LOCATION = new Translation2d(-0.27, 0.27);
 
     public static final HolonomicPathFollowerConfig pathFollowerConfig = new HolonomicPathFollowerConfig(
       // Translation constants
@@ -74,7 +74,7 @@ public final class Constants {
 
     public static final double SWERVE_RADIUS = 0.375; // m
 
-    public static final double WHEEL_DIAMETER = 0.102;
+    public static final double WHEEL_DIAMETER = 0.092;
     public static final double WHEEL_CIRCUMFERENCE = WHEEL_DIAMETER * Math.PI;
 
     // public static final double TICKS_PER_REVOLUTION_NEO = 42;
@@ -100,15 +100,15 @@ public final class Constants {
     public static final double ROTATION_POSITION_CONTROL_I = 0.0; 
     public static final double ROTATION_POSITION_CONTROL_D = 0.0;    
 
-    public static final double PATH_TRANSLATION_P = 5.0;
+    public static final double PATH_TRANSLATION_P = 7.0;
     public static final double PATH_TRANSLATION_I = 0.0; 
     public static final double PATH_TRANSLATION_D = 0.0;
 
-    public static final double PATH_ROTATION_P = 5.0;
+    public static final double PATH_ROTATION_P = 2.00;
     public static final double PATH_ROTATION_I = 0.0; 
     public static final double PATH_ROTATION_D = 0.0;
 
-    public static final double CONTROLLER_POWER = 2;
+    public static final double CONTROLLER_POWER = 3;
 
     public static final Pose2d ZERO_POSE = new Pose2d();
   }
@@ -120,6 +120,8 @@ public final class Constants {
     public static final double INTAKE_SPEED_FACTOR = 0.7;
 
     public static final double INTAKE_DEFAULT_SPEED = 0.6;
+
+    public static final double INTAKE_HOLD_SPEED = -0.2;
   }
 
   public static final class PivotConstants {
@@ -146,10 +148,11 @@ public final class Constants {
 
     public static final double PIVOT_SHOOTER_OFFSET = 0.0;
 
-    public static final double INTAKE_ANGLE = 4;
-    public static final double AMP_ANGLE = 107.0;
-    public static final double SUBWOOFER_ANGLE = 23.0;
+    public static final double INTAKE_ANGLE = 5.0;
+    public static final double AMP_ANGLE = 96.0;
+    public static final double SUBWOOFER_ANGLE = 28.5;
     public static final double TRAVEL_ANGLE = 13.0;
+    public static final double CLIMB_ANGLE = 80.0;
     public static final double MAX_ANGLE = 107.0;
     public static final double MIN_ANGLE = 3.0;
 
@@ -162,9 +165,11 @@ public final class Constants {
 
     public static final double SHOOTER_SPEED_FACTOR = 0.8;
 
-    public static final double SHOOTER_SHOOT_SPEED = 0.5;
+    public static final double SHOOTER_SHOOT_SPEED = 0.7;
 
     public static final double SHOOTER_AMP_SPEED = 0.1;
+
+    public static final double SHOOTER_HOLD_SPEED = -0.2;
 
     //public static final double SHOOTER_TIME_DELAY = 1000;
   }
@@ -177,6 +182,10 @@ public final class Constants {
     public static final float CLIMBER_REVERSE_LIMIT = 0;
 
     public static final double CLIMBER_RATE_LIMIT = 3; 
+
+    public static final double CLIMBER_CLIMB_SPEED = 0.6;
+
+    public static final double CLIMBER_HOLD_SPEED = 0.05;
 
     public static final double CLIMBER_SPEED_FACTOR = 0.8;
 

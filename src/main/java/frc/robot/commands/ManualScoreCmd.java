@@ -30,20 +30,6 @@ public class ManualScoreCmd extends Command {
 
   @Override
   public void execute() {
-
-    if (pivotSubsystem.getAmpReadiness()) {
-      intakeSubsystem.setIntakeSpeed(IntakeConstants.INTAKE_DEFAULT_SPEED);
-      //shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_AMP_SPEED);
-    }
-
-    if (pivotSubsystem.getSubwooferReadiness()) {
-      intakeSubsystem.setIntakeSpeed(IntakeConstants.INTAKE_DEFAULT_SPEED);
-      //shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_SHOOT_SPEED);
-    }
-
-    else{
-        System.out.println("Not At Right Angle");
-    }
   }
 
   @Override
@@ -51,6 +37,19 @@ public class ManualScoreCmd extends Command {
 
   @Override
   public boolean isFinished() {
+    if (pivotSubsystem.getAmpReadiness()) {
+      intakeSubsystem.setIntakeSpeed(IntakeConstants.INTAKE_DEFAULT_SPEED);
+      //shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_AMP_SPEED);
+      return true;
+    }
+
+    if (pivotSubsystem.getSubwooferReadiness()) {
+      intakeSubsystem.setIntakeSpeed(IntakeConstants.INTAKE_DEFAULT_SPEED);
+      //shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_SHOOT_SPEED);
+      return true;
+    }
+    
+    System.out.println("Not At Right Angle");
     return false;
   }
 }
