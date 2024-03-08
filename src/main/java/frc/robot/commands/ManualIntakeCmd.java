@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.IntakeConstants;
 import frc.robot.Constants.PivotConstants;
 //import frc.robot.Constants.IntakeConstants;
-
+import frc.robot.Constants.ShooterConstants;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.PivotSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
@@ -46,7 +46,7 @@ public class ManualIntakeCmd extends Command {
     
     if (intakeSubsystem.getNotePresent()) {
       intakeSubsystem.setHoldSpeed(IntakeConstants.INTAKE_HOLD_SPEED);
-      shooterSubsystem.setShooterSpeed(-0.1);
+      shooterSubsystem.setShooterSpeed(ShooterConstants.SHOOTER_HOLD_SPEED);
       pivotSubsystem.setPivotAngle(PivotConstants.TRAVEL_ANGLE);
       return true;
     }

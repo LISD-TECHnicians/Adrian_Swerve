@@ -56,11 +56,11 @@ public class RobotContainer {
   //private final ToggleSolenoidCmd toggleSolenoid = new ToggleSolenoidCmd(pneumaticSubsystem);
   private final SwerveCmd joystickSwerve = new SwerveCmd(
     swerveSubsystem, 
-    () -> controller.getLeftX()*swerveSubsystem.curvedSpeedOutput(controller.getLeftY(), controller.getLeftX()), 
-    () -> -controller.getLeftY()*swerveSubsystem.curvedSpeedOutput(controller.getLeftY(), controller.getLeftX()), 
-    () -> controller.getRightX(),//*swerveSubsystem.curvedSpeedOutput(controller.getRightX(), 0),
-    controller.leftTrigger(),
-    controller.rightTrigger());
+    () -> controller.getLeftX(), 
+    () -> -controller.getLeftY(), 
+    () -> controller.getRightX());//*swerveSubsystem.curvedSpeedOutput(controller.getRightX(), 0),
+    //controller.leftTrigger(),
+    //controller.rightTrigger());
   private final SetPoseCmd resetPose = new SetPoseCmd(swerveSubsystem, DriveConstants.ZERO_POSE);
   private final SetDriveBrakeCmd setDriveBrake = new SetDriveBrakeCmd(swerveSubsystem);
   //private final SetDriveCoastCmd setDriveCoast = new SetDriveCoastCmd(swerveSubsystem);
@@ -113,14 +113,14 @@ public class RobotContainer {
     //controller.button(9).onTrue(up);
     controller.button(10).onTrue(out);
 
-    controller.button(5).onTrue(setDriveBrake);
-    controller.button(6).onTrue(climbAngle);
+    //controller.button(5).onTrue(setDriveBrake);
+    controller.button(9).onTrue(climbAngle);
     controller.button(4).onTrue(amp);
     controller.button(3).onTrue(subwoofer);
     controller.button(1).onTrue(score);
     controller.button(2).onTrue(intake);
     //controller.button(5).onTrue(travel);
-    controller.button(9).onTrue(stop);
+    controller.button(6).onTrue(stop);
 
     //controller.button(3).onTrue(solenoidPose);
   }

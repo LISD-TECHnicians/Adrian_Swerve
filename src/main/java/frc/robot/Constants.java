@@ -74,7 +74,7 @@ public final class Constants {
 
     public static final double SWERVE_RADIUS = 0.375; // m
 
-    public static final double WHEEL_DIAMETER = 0.092;
+    public static final double WHEEL_DIAMETER = 0.102;
     public static final double WHEEL_CIRCUMFERENCE = WHEEL_DIAMETER * Math.PI;
 
     // public static final double TICKS_PER_REVOLUTION_NEO = 42;
@@ -121,7 +121,7 @@ public final class Constants {
 
     public static final double INTAKE_DEFAULT_SPEED = 0.6;
 
-    public static final double INTAKE_HOLD_SPEED = -0.2;
+    public static final double INTAKE_HOLD_SPEED = -0.4;
   }
 
   public static final class PivotConstants {
@@ -148,8 +148,8 @@ public final class Constants {
 
     public static final double PIVOT_SHOOTER_OFFSET = 0.0;
 
-    public static final double INTAKE_ANGLE = 5.0;
-    public static final double AMP_ANGLE = 96.0;
+    public static final double INTAKE_ANGLE = 5.5;
+    public static final double AMP_ANGLE = 102.0;
     public static final double SUBWOOFER_ANGLE = 28.5;
     public static final double TRAVEL_ANGLE = 13.0;
     public static final double CLIMB_ANGLE = 80.0;
@@ -169,7 +169,7 @@ public final class Constants {
 
     public static final double SHOOTER_AMP_SPEED = 0.1;
 
-    public static final double SHOOTER_HOLD_SPEED = -0.2;
+    public static final double SHOOTER_HOLD_SPEED = -0.3;
 
     //public static final double SHOOTER_TIME_DELAY = 1000;
   }

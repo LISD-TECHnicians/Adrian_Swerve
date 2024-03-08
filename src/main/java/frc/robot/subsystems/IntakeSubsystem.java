@@ -52,7 +52,12 @@ public class IntakeSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    //System.out.println("Note Present: " + getNotePresent());
+    if(getNotePresent()){
+      System.out.println("NOTE!!!!!!!!!");
+    }
+    else{
+      System.out.println("nope");
+    }
   }
 
   @Override

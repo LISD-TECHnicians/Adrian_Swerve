@@ -33,7 +33,7 @@
   "eventMarkers": [
     {
       "name": "Aim at Subwoofer",
-      "waypointRelativePos": 0.05,
+      "waypointRelativePos": 0.2,
       "command": {
         "type": "parallel",
         "data": {

@@ -22,8 +22,8 @@ public class SwerveCmd extends Command {
   private final DoubleSupplier yController; // m/s
   private final DoubleSupplier rotationController; // rad/s
 
-  private final BooleanSupplier robotOriented;
-  private final BooleanSupplier rotationPositionControl;
+  //private final BooleanSupplier robotOriented;
+  //private final BooleanSupplier rotationPositionControl;
 
   private final PIDController rotationPositionPID = new PIDController(DriveConstants.ROTATION_POSITION_CONTROL_P, 
       DriveConstants.ROTATION_POSITION_CONTROL_I, DriveConstants.ROTATION_POSITION_CONTROL_D);
@@ -31,14 +31,14 @@ public class SwerveCmd extends Command {
   private ChassisSpeeds swerveSpeeds = new ChassisSpeeds(); 
 
   public SwerveCmd(SwerveSubsystem swerveSubsystem, DoubleSupplier xController, DoubleSupplier yController, 
-      DoubleSupplier rotationController, BooleanSupplier robotOriented, BooleanSupplier rotationPositionControl) {
+      DoubleSupplier rotationController) {
     this.swerveSubsystem = swerveSubsystem;
     this.xController = xController;
     this.yController = yController;
     this.rotationController = rotationController;
 
-    this.robotOriented = robotOriented;
-    this.rotationPositionControl = rotationPositionControl;
+    //this.robotOriented = robotOriented;
+    //this.rotationPositionControl = rotationPositionControl;
 
     rotationPositionPID.enableContinuousInput(-Math.PI, Math.PI);
 
@@ -51,16 +51,16 @@ public class SwerveCmd extends Command {
   @Override
   public void execute() {
     double xSpeed = Math.abs(xController.getAsDouble()) > ControllerConstants.DEADBAND ? xController.getAsDouble() * 
-        DriveConstants.MAX_DRIVE_SPEED : 0;
+        DriveConstants.MAX_DRIVE_SPEED * swerveSubsystem.curvedSpeedOutput(xController.getAsDouble(), yController.getAsDouble()) : 0;
     double ySpeed = Math.abs(yController.getAsDouble()) > ControllerConstants.DEADBAND ? yController.getAsDouble() * 
-        DriveConstants.MAX_DRIVE_SPEED : 0;
+        DriveConstants.MAX_DRIVE_SPEED * swerveSubsystem.curvedSpeedOutput(xController.getAsDouble(), yController.getAsDouble()) : 0;
 
     double rotationSpeed = Math.abs(rotationController.getAsDouble()) > ControllerConstants.DEADBAND ? 
-        rotationController.getAsDouble() * DriveConstants.MAX_SET_ROTATION_SPEED : 0;
+        rotationController.getAsDouble() * DriveConstants.MAX_SET_ROTATION_SPEED * swerveSubsystem.curvedSpeedOutput(rotationController.getAsDouble(), 0) : 0;
     double rotationPosition = Math.abs(rotationController.getAsDouble()) > ControllerConstants.DEADBAND ? 
         rotationController.getAsDouble() * Math.PI : 0;
 
-    if (robotOriented.getAsBoolean()) {
+    /*if (robotOriented.getAsBoolean()) {
       swerveSpeeds.vxMetersPerSecond = xSpeed;
       swerveSpeeds.vyMetersPerSecond = ySpeed;
       swerveSpeeds.omegaRadiansPerSecond = rotationSpeed;
@@ -81,7 +81,12 @@ public class SwerveCmd extends Command {
           rotationSpeed, 
           Rotation2d.fromRadians(-swerveSubsystem.getYaw()));
       }
-    }
+    }*/
+    swerveSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(
+          xSpeed, 
+          ySpeed, 
+          rotationSpeed, 
+          Rotation2d.fromRadians(-swerveSubsystem.getYaw()));
 
     swerveSubsystem.setChassisSpeeds(swerveSpeeds);
     //System.out.println("RotVal: " + rotationController.getAsDouble());

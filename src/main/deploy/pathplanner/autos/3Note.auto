@@ -86,42 +86,6 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Sub2TopClose"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.1
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Travel"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "TopClose2Sub"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.2
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Score"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
             "pathName": "Sub2BottomClose"
           }
         },

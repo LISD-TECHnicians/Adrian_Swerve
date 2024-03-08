@@ -186,7 +186,7 @@ public class SwerveSubsystem extends SubsystemBase {
   }
 
   public double getR(double x, double y) {
-    return Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+    return Math.abs(Math.sqrt(Math.abs(Math.pow(x,2)) + Math.abs(Math.pow(y,2))));
   }
 
   @Override
