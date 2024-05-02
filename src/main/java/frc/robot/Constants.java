@@ -121,7 +121,7 @@ public final class Constants {
 
     public static final double INTAKE_DEFAULT_SPEED = 0.6;
 
-    public static final double INTAKE_HOLD_SPEED = -0.4;
+    public static final double INTAKE_HOLD_SPEED = -0.25;
   }
 
   public static final class PivotConstants {
@@ -148,7 +148,7 @@ public final class Constants {
 
     public static final double PIVOT_SHOOTER_OFFSET = 0.0;
 
-    public static final double INTAKE_ANGLE = 5.5;
+    public static final double INTAKE_ANGLE = 4.0;
     public static final double AMP_ANGLE = 102.0;
     public static final double SUBWOOFER_ANGLE = 28.5;
     public static final double TRAVEL_ANGLE = 13.0;
@@ -165,11 +165,11 @@ public final class Constants {
 
     public static final double SHOOTER_SPEED_FACTOR = 0.8;
 
-    public static final double SHOOTER_SHOOT_SPEED = 0.7;
+    public static final double SHOOTER_SHOOT_SPEED = 0.85;
 
     public static final double SHOOTER_AMP_SPEED = 0.25;
 
-    public static final double SHOOTER_HOLD_SPEED = -0.3;
+    public static final double SHOOTER_HOLD_SPEED = -0.05;
 
     //public static final double SHOOTER_TIME_DELAY = 1000;
   }
